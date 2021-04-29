@@ -2,9 +2,9 @@
 #include <fstream>
 using namespace std;
 
-const int SIZE = 1000;
 
-int sumacyfr(int n) 
+const int SIZE = 1000;
+int suma(int n) 
 {
 	int suma=0;
 	while(n > 0) 
@@ -13,27 +13,29 @@ int sumacyfr(int n)
     n/=10;
   }
   return suma;
-  
 }
 
-void zadanie() 
+void oblicz() 
 {
-  ifstream plik("c:\\trojki.txt");
+  ifstream plik("c:\\a.txt");
   int a,b,c;
   
   for(int i=0; i<SIZE; i++) 
   {
     plik>>a>>b>>c;
-    if(sumacyfr(a) + sumacyfr(b) == c)
+    if(suma(a) + suma(b) == c)
 	{
 		cout<<a<<" "<<b<<" "<<c<<endl;
 	}
   }
+  
+  
+  
   plik.close();
   cout<<endl;
 }
 
 int main(int argc, char** argv) {
-	zadanie();
+	oblicz();
 	return 0;
 }
